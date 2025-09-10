@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roots Tutor Academy</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PAGE CONTENT -->
+<div id="page-content">
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <div class="logo"><img src="logo.png" alt="Roots Tutor Academy"></div>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#find-tutor">Find a Tutor</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZwZNCfcaJRs1cXrat-2nLuU3bMfSbW0j27Qq6W23xlozTZg/viewform" target="_blank">Register as Tutor</a>
+        <a href="#resources">Free Resources</a>
+      </div>
+      <div class="mobile-menu-button">☰</div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#find-tutor">Find a Tutor</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZwZNCfcaJRs1cXrat-2nLuU3bMfSbW0j27Qq6W23xlozTZg/viewform" target="_blank">Register as Tutor</a>
+      <a href="#resources">Free Resources</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Helping Students Reach Their Full Potential</h1>
+      <p>Connect with qualified tutors who are passionate about education and committed to your success.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="openModal()">Find a Tutor</button>
+        <button class="btn-outline" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf_tutor_registration/viewform', '_blank')">Join as Tutor</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-box">
+        <span>Quality Education</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutor Categories -->
+  <section class="section" id="categories">
+    <h2>Tutor Categories</h2>
+    <div class="cards">
+      <div class="card"><h3>O/A Levels</h3><p>Cambridge International Examinations</p></div>
+      <div class="card"><h3>Matric/Inter</h3><p>Local Board Examinations</p></div>
+      <div class="card"><h3>Cambridge</h3><p>Cambridge Curriculum</p></div>
+      <div class="card"><h3>SAT/IELTS</h3><p>International Test Preparation</p></div>
+      <div class="card"><h3>University Subjects</h3><p>Higher Education Support</p></div>
+    </div>
+  </section>
+
+  <!-- Student Form Section -->
+  <section class="section" id="find-tutor">
+    <h2>Find Your Perfect Tutor</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeO3c_QUflFi698lnkbdhoJmrI_d2GaorM924xXdVBv8kUS_w/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section">
+    <h2>Why Choose Roots Tutor Academy?</h2>
+    <div class="cards">
+      <div class="card"><h3>Qualified Teachers</h3><p>All our tutors are highly qualified and experienced professionals</p></div>
+      <div class="card"><h3>Flexible Timing</h3><p>Choose your preferred time slots that fit your schedule</p></div>
+      <div class="card"><h3>Personalized Learning</h3><p>Customized teaching methods based on individual student needs</p></div>
+      <div class="card"><h3>Proven Results</h3><p>Track record of helping students achieve excellent grades</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <h2>What Our Students Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Roots Tutor Academy helped me improve my grades significantly. The tutors are amazing!"</p>
+        <h4>- Sarah Ahmed</h4>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Best tutoring service in the city. My son's confidence has increased tremendously."</p>
+        <h4>- Ali Hassan</h4>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Professional and dedicated tutors. Highly recommend for O/A Level students."</p>
+        <h4>- Fatima Khan</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-section">
+      <h3>Roots Tutor Academy</h3>
+      <p>Helping students reach their full potential through quality education and personalized tutoring.</p>
+      <div class="social">
+        <a href="https://wa.me/923352228907">WhatsApp</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a> | 
+      <a href="#find-tutor">Find a Tutor</a> | 
+      <a href="#categories">Categories</a> | 
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_tutor_registration/viewform" target="_blank">Register as Tutor</a>
+    </div>
+    <p>© 2024 Roots Tutor Academy. All rights reserved.</p>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/923352228907" class="whatsapp" target="_blank" aria-label="WhatsApp">📞</a>
+
+</div><!-- /#page-content -->
+
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-content" role="document">
+    <button class="close" aria-label="Close modal">×</button>
+    <h3>Find Your Perfect Tutor</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeO3c_QUflFi698lnkbdhoJmrI_d2GaorM924xXdVBv8kUS_w/viewform?embedded=true" width="100%" height="420" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
