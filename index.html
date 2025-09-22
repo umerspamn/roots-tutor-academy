@@ -8,6 +8,49 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyChaU7FMhPkg-VI0lfctenjLKbaHUmBnZU",
+    authDomain: "onnnnnnnn-86197.firebaseapp.com",
+    projectId: "onnnnnnnn-86197",
+    storageBucket: "onnnnnnnn-86197.appspot.com",
+    messagingSenderId: "708226700407",
+    appId: "1:708226700407:web:51b22d980cc650b1ba6272"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const form = document.getElementById('tutorForm');
+  const messageBox = document.getElementById('message');
+
+  function showMessage(msg, success=true){
+    messageBox.innerHTML = `<p style="color:${success?'green':'red'}">${msg}</p>`;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const parentName = document.getElementById('parentName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const studentClass = document.getElementById('studentClass').value;
+    const area = document.getElementById('area').value.trim();
+    const notes = document.getElementById('notes').value.trim();
+    const subjects = Array.from(document.querySelectorAll('input[name="subjects"]:checked')).map(el => el.value);
+
+    try {
+      await addDoc(collection(db, "tutor_requests"), {
+        parentName, phone, studentClass, subjects, area, notes, createdAt: serverTimestamp()
+      });
+      showMessage("✅ Request submitted successfully!");
+      form.reset();
+    } catch (err) {
+      showMessage("❌ Error: " + err.message, false);
+    }
+  });
+</script>
 
 <!-- PAGE CONTENT -->
 <div id="page-content">
@@ -67,10 +110,49 @@
   </section>
 
   <!-- Student Form Section -->
-  <section class="section" id="find-tutor">
-    <h2>Find Your Perfect Tutor</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeO3c_QUflFi698lnkbdhoJmrI_d2GaorM924xXdVBv8kUS_w/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
-  </section>
+<section class="section" id="find-tutor">
+  <h2>Find Your Perfect Tutor</h2>
+  
+  <form id="tutorForm">
+    <label for="parentName">Parent / Guardian Name</label>
+    <input id="parentName" name="parentName" type="text" placeholder="e.g., Ahmed Khan" required />
+
+    <label for="phone">Contact Number</label>
+    <input id="phone" name="phone" type="tel" placeholder="03XX-XXXXXXX" required />
+
+    <label for="studentClass">Class / Grade</label>
+    <select id="studentClass" name="studentClass" required>
+      <option value="">Select class</option>
+      <option>Nursery / KG</option>
+      <option>Primary (1-5)</option>
+      <option>Middle (6-8)</option>
+      <option>Secondary (9-10)</option>
+      <option>Higher Secondary (11-12)</option>
+      <option>Undergraduate</option>
+      <option>Other</option>
+    </select>
+
+    <label>Subjects Required</label>
+    <div class="subjects">
+      <label><input type="checkbox" name="subjects" value="Mathematics"> Mathematics</label>
+      <label><input type="checkbox" name="subjects" value="Physics"> Physics</label>
+      <label><input type="checkbox" name="subjects" value="English"> English</label>
+      <label><input type="checkbox" name="subjects" value="Biology"> Biology</label>
+      <label><input type="checkbox" name="subjects" value="Computer Science"> Computer Science</label>
+    </div>
+
+    <label for="area">Area / City</label>
+    <input id="area" name="area" type="text" placeholder="e.g., Gulshan-e-Iqbal, Karachi" required />
+
+    <label for="notes">Additional Notes (optional)</label>
+    <textarea id="notes" name="notes" rows="3"></textarea>
+
+    <button class="btn-primary" type="submit">Submit Request</button>
+  </form>
+
+  <div id="message"></div>
+</section>
+
 
   <!-- Why Choose Us -->
   <section class="section">
@@ -134,15 +216,54 @@
 <!-- MODAL -->
 <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="modal-content" role="document">
-    <button class="close" aria-label="Close modal">×</button>
-    <h3>Find Your Perfect Tutor</h3>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeO3c_QUflFi698lnkbdhoJmrI_d2GaorM924xXdVBv8kUS_w/viewform?embedded=true" width="100%" height="420" frameborder="0"></iframe>
-  </div>
+  <button class="close" aria-label="Close modal">×</button>
+  <h3>Find Your Perfect Tutor</h3>
+
+  <form id="tutorForm">
+    <label for="parentName">Parent / Guardian Name</label>
+    <input id="parentName" name="parentName" type="text" placeholder="e.g., Ahmed Khan" required />
+
+    <label for="phone">Contact Number</label>
+    <input id="phone" name="phone" type="tel" placeholder="03XX-XXXXXXX" required />
+
+    <label for="studentClass">Class / Grade</label>
+    <select id="studentClass" name="studentClass" required>
+      <option value="">Select class</option>
+      <option>Nursery / KG</option>
+      <option>Primary (1-5)</option>
+      <option>Middle (6-8)</option>
+      <option>Secondary (9-10)</option>
+      <option>Higher Secondary (11-12)</option>
+      <option>Undergraduate</option>
+      <option>Other</option>
+    </select>
+
+    <label>Subjects Required</label>
+    <div class="subjects">
+      <label><input type="checkbox" name="subjects" value="Mathematics"> Mathematics</label>
+      <label><input type="checkbox" name="subjects" value="Physics"> Physics</label>
+      <label><input type="checkbox" name="subjects" value="English"> English</label>
+      <label><input type="checkbox" name="subjects" value="Biology"> Biology</label>
+      <label><input type="checkbox" name="subjects" value="Computer Science"> Computer Science</label>
+    </div>
+
+    <label for="area">Area / City</label>
+    <input id="area" name="area" type="text" placeholder="e.g., Gulshan-e-Iqbal, Karachi" required />
+
+    <label for="notes">Additional Notes (optional)</label>
+    <textarea id="notes" name="notes" rows="3"></textarea>
+
+    <button class="btn-primary" type="submit">Submit Request</button>
+  </form>
+
+  <div id="message"></div>
 </div>
+
 
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
