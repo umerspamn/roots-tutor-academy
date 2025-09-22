@@ -88,3 +88,130 @@ footer .social a { margin-right: 10px; }
   nav .menu { display: none; }
   nav .mobile-menu-button { display: block; }
 }
+/* ================= Tutor Form Styling ================= */
+#find-tutor,
+.modal-content {
+  background: linear-gradient(to bottom right, #4CAF50, #2E7D32);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  color: #fff;
+}
+
+#find-tutor h2,
+.modal-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+#tutorForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#tutorForm label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+#tutorForm input,
+#tutorForm select,
+#tutorForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#tutorForm input:focus,
+#tutorForm select:focus,
+#tutorForm textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76,175,80,0.4);
+  transform: translateY(-1px);
+}
+
+/* Subjects checkboxes */
+.subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.subjects label {
+  background: #fff;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.subjects input {
+  margin-right: 6px;
+}
+
+.subjects label:hover {
+  background: #f0f0f0;
+  transform: scale(1.02);
+}
+
+/* Submit Button */
+.btn-primary {
+  background: #fff;
+  color: #2E7D32;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #f0f0f0;
+  color: #1b5e20;
+  transform: translateY(-2px);
+}
+
+#message {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ================= Mobile Optimizations ================= */
+@media(max-width: 600px) {
+  #find-tutor,
+  .modal-content {
+    padding: 16px;
+    border-radius: 10px;
+  }
+  #tutorForm {
+    gap: 12px;
+  }
+  #tutorForm input,
+  #tutorForm select,
+  #tutorForm textarea {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
