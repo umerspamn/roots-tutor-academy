@@ -6,14 +6,27 @@
     <title>Roots Tutor Academy - Your Path to Excellence</title>
     <link rel="icon" href="logo.png" type="image/png">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
         /* Reset & base styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        :root {
+            --primary-green: #2E7D32;
+            --dark-blue: #0D1B2A;
+            --accent-gold: #C9A227;
+            --light-gray: #F8F9FA;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: #fff; color: #0D1B2A; line-height: 1.6; }
+        body { background-color: var(--white); color: var(--dark-blue); line-height: 1.6; }
         body.modal-open { overflow: hidden; }
 
         /* Blur effect for page content */
@@ -25,45 +38,50 @@
         nav .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; height: 70px; }
         nav .logo img { height: 60px; width: auto; object-fit: contain; }
         
-        .nav-links { display: none; } /* Hidden by default for mobile-first */
-        .mobile-menu-button { display: block; font-size: 1.8rem; color: #0D1B2A; background: none; border: none; cursor: pointer; }
+        .nav-links { display: none; } /* Mobile-first: hidden by default */
+        .mobile-menu-button { display: block; font-size: 1.8rem; color: var(--dark-blue); background: none; border: none; cursor: pointer; }
         
-        .mobile-menu { background: #fff; position: absolute; top: 70px; left: 0; right: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; z-index: 99; }
+        .mobile-menu { background: #fff; position: absolute; top: 70px; left: 0; right: 0; box-shadow: var(--shadow); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; z-index: 99; }
         .mobile-menu.active { max-height: 500px; }
-        .mobile-menu a { display: block; padding: 15px 5%; border-bottom: 1px solid #f1f1f1; text-decoration: none; color: #0D1B2A; font-weight: 500; }
-        .mobile-menu a:hover { background: #f9f9f9; }
+        .mobile-menu a { display: block; padding: 15px 5%; border-bottom: 1px solid #f1f1f1; text-decoration: none; color: var(--dark-blue); font-weight: 600; }
+        .mobile-menu a:hover { background: var(--light-gray); }
 
-        .btn-primary { background-color: #2E7D32; color: #fff; padding: 10px 20px; font-size: 1rem; border: none; cursor: pointer; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; }
-        .btn-primary:hover { background-color: #1B5E20; }
-        .btn-outline { border: 2px solid #C9A227; color: #C9A227; background: none; padding: 8px 18px; font-size: 1rem; cursor: pointer; border-radius: 5px; text-decoration: none; transition: all 0.3s ease; }
-        .btn-outline:hover { background-color: #C9A227; color: #fff; }
+        .btn { padding: 12px 24px; font-size: 1rem; font-weight: 600; border: none; cursor: pointer; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
+        .btn-primary { background-color: var(--primary-green); color: var(--white); }
+        .btn-primary:hover { background-color: #1B5E20; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(46,125,50,0.3); }
+        .btn-outline { border: 2px solid var(--accent-gold); color: var(--accent-gold); background: none; }
+        .btn-outline:hover { background-color: var(--accent-gold); color: var(--white); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201,162,39,0.3); }
 
-        .mobile-menu .btn-primary { display: block; margin: 15px 5%; text-align: center; }
+        .mobile-menu .btn-primary { margin: 15px 5%; text-align: center; }
 
         /* Hero Section */
-        .hero { background: linear-gradient(to bottom right, #0D1B2A, #1A2332); color: #fff; padding: 80px 5% 60px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center; gap: 2rem; }
-        .hero-text { max-width: 600px; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; }
-        .hero-buttons { display: flex; gap: 15px; justify-content: center; }
-        .hero-box { background: linear-gradient(to bottom right,#4CAF50,#2E7D32); width: 280px; height: 280px; border-radius: 20px; display:flex; align-items:center; justify-content:center; margin-top:20px; }
-        .hero-box span { color:white; font-size:1.2rem; font-weight:bold; }
+        .hero { background: var(--light-gray); padding: 80px 5% 60px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; text-align: center; gap: 2rem; }
+        .hero-text { max-width: 100%; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; color: var(--dark-blue); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #555; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .hero-image img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); }
 
         /* Sections & Cards */
-        .section { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .section h2 { font-size: 2rem; text-align: center; margin-bottom: 40px; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-        .card h3 { margin-bottom: 10px; color: #0D1B2A; }
+        .section { padding: 80px 5%; max-width: 1200px; margin: auto; }
+        .section h2 { font-size: 2.5rem; text-align: center; margin-bottom: 50px; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: var(--shadow); transition: 0.3s; text-align: center; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card h3 { margin-bottom: 10px; color: var(--primary-green); }
         .card p { color: #555; }
 
         /* Testimonials */
-        .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .testimonial { background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 5px solid var(--primary-green); }
-        .testimonial .stars { color: #C9A227; margin-bottom: 10px; }
-        .testimonial p { font-style: italic; color: #555; margin-bottom: 10px; }
-        .testimonial h4 { text-align: right; font-weight: bold; color: #0D1B2A; }
+        .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial { background: var(--light-gray); padding: 25px; border-radius: 10px; border-left: 5px solid var(--primary-green); }
+        .testimonial .stars { color: var(--accent-gold); margin-bottom: 10px; font-size: 1.2rem; }
+        .testimonial p { font-style: italic; color: #555; margin-bottom: 15px; }
+        .testimonial h4 { text-align: right; font-weight: bold; color: var(--dark-blue); }
+
+        /* CTA Section */
+        .cta-section { background: var(--dark-blue); color: var(--white); padding: 80px 5%; text-align: center; }
+        .cta-section h2 { color: var(--white); }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px auto; opacity: 0.9; }
 
         /* Modal */
         .modal { position: fixed; inset: 0; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.6); z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; padding: 20px; }
@@ -71,20 +89,21 @@
         .modal-content { background: #fff; padding: 2rem; border-radius: 12px; max-width: 500px; width: 100%; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto; transform: translateY(-20px); transition: transform 0.3s ease; }
         .modal.active .modal-content { transform: translateY(0); }
         .modal-content .close { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #888; }
-        .modal-content h3 { text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem; color: #0D1B2A; }
+        .modal-content h3 { text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--dark-blue); }
         .modal-content form { display: flex; flex-direction: column; gap: 1rem; }
         .modal-content label { font-weight: 600; font-size: 0.9rem; }
         .modal-content input, .modal-content select, .modal-content textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
-        .modal-content .subjects { display: flex; flex-wrap: wrap; gap: 10px; }
+        .modal-content .subjects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .modal-content .subjects label { display: flex; align-items: center; gap: 5px; font-weight: normal; }
         #message { text-align: center; margin-top: 1rem; font-weight: 600; color: var(--primary-green); }
 
         /* Footer */
-        footer { background: #0D1B2A; color: #fff; padding: 60px 5%; text-align: center; }
-        footer a { color: #C9A227; text-decoration: none; }
+        footer { background: var(--dark-blue); color: #fff; padding: 60px 5%; text-align: center; }
+        footer a { color: var(--accent-gold); text-decoration: none; }
         footer .footer-section { margin-bottom: 30px; }
         footer .social { margin-top: 15px; }
-        footer .social a { margin: 0 10px; font-size: 1.2rem; }
+        footer .social a { margin: 0 10px; font-size: 1.5rem; transition: color 0.3s ease; }
+        footer .social a:hover { color: var(--white); }
         footer .quick-links a { margin: 0 8px; }
 
         /* WhatsApp Button */
@@ -92,16 +111,17 @@
         .whatsapp:hover { transform: scale(1.1); }
 
         /* Responsive */
-        @media(min-width: 768px) {
-            .hero { text-align: left; justify-content: space-between; }
+        @media(min-width: 992px) {
+            .hero { text-align: left; }
             .hero-text { max-width: 50%; }
+            .hero-image { max-width: 45%; }
             .hero-buttons { justify-content: flex-start; }
             
             nav .mobile-menu-button, nav .mobile-menu { display: none; }
-            nav .nav-links { display: flex; align-items: center; gap: 25px; }
-            nav .nav-links a { text-decoration: none; font-weight: 500; color: #0D1B2A; }
-            nav .nav-links a:not(.btn-primary) { transition: color 0.3s ease; }
-            nav .nav-links a:not(.btn-primary):hover { color: var(--primary-green); }
+            nav .nav-links { display: flex; align-items: center; gap: 25px; list-style: none; }
+            nav .nav-links a { text-decoration: none; font-weight: 600; color: var(--dark-blue); }
+            nav .nav-links a:not(.btn) { transition: color 0.3s ease; }
+            nav .nav-links a:not(.btn):hover { color: var(--primary-green); }
         }
     </style>
 </head>
@@ -113,59 +133,57 @@
     <!-- Navbar -->
     <nav>
         <div class="container">
-            <a href="#" class="logo"><img src="logo.png" alt="Roots Tutor Academy"></a>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="student-hub.html">Student Hub</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZwZNCfcaJRs1cXrat-2nLuU3bMfSbW0j27Qq6W23xlozTZg/viewform" target="_blank">Register as Tutor</a>
-                <a href="#" class="btn-primary modal-trigger">Find a Tutor</a>
-            </div>
+            <a href="#" class="logo"><img src="logo.png" alt="Roots Tutor Academy Logo"></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="student-hub.html">Student Hub</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdZwZNCfcaJRs1cXrat-2nLuU3bMfSbW0j27Qq6W23xlozTZg/viewform" target="_blank">Register as Tutor</a></li>
+                <li><a href="#" class="btn btn-primary modal-trigger">Find a Tutor</a></li>
+            </ul>
             <button class="mobile-menu-button" id="mobile-menu-toggle" aria-label="Toggle Menu">☰</button>
         </div>
         <div class="mobile-menu" id="mobile-menu">
             <a href="#">Home</a>
             <a href="student-hub.html">Student Hub</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZwZNCfcaJRs1cXrat-2nLuU3bMfSbW0j27Qq6W23xlozTZg/viewform" target="_blank">Register as Tutor</a>
-            <a href="#" class="btn-primary modal-trigger">Find a Tutor</a>
+            <a href="#" class="btn btn-primary modal-trigger">Find a Tutor</a>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-text">
-            <h1>Helping Students Reach Their Full Potential</h1>
-            <p>Connect with qualified tutors in Karachi who are passionate about education and committed to your success.</p>
+            <h1>Helping Students in Karachi Reach Their Full Potential</h1>
+            <p>Connect with qualified, passionate tutors who are committed to your academic success through personalized learning.</p>
             <div class="hero-buttons">
-                <button class="btn-primary modal-trigger">Find a Tutor</button>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZwZNCfcaJRs1cXrat-2nLuU3bMfSbW0j27Qq6W23xlozTZg/viewform" target="_blank" rel="noopener noreferrer" class="btn-outline">Join as Tutor</a>
+                <button class="btn btn-primary modal-trigger">Find a Tutor</button>
+                <button class="btn btn-outline modal-trigger">Book a Free Demo</button>
             </div>
         </div>
         <div class="hero-image">
-            <div class="hero-box">
-                <span>Quality Education</span>
-            </div>
+            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop" alt="Tutor helping a student with their work">
         </div>
     </section>
 
     <!-- Tutor Categories -->
     <section class="section" id="categories">
-        <h2>Tutor Categories</h2>
+        <h2>Our Expertise</h2>
         <div class="cards">
-            <div class="card"><h3>O/A Levels</h3><p>Cambridge International</p></div>
-            <div class="card"><h3>Matric/Inter</h3><p>Local Board Examinations</p></div>
+            <div class="card"><h3>O/A Levels</h3><p>Cambridge & Edexcel</p></div>
+            <div class="card"><h3>Matric/Inter</h3><p>All Local Boards</p></div>
             <div class="card"><h3>SAT/IELTS</h3><p>Test Preparation</p></div>
-            <div class="card"><h3>University Subjects</h3><p>Higher Education</p></div>
+            <div class="card"><h3>University</h3><p>Admissions & Subjects</p></div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="section">
+    <section class="section" style="background-color: var(--light-gray);">
         <h2>Why Choose Roots Tutor Academy?</h2>
         <div class="cards">
-            <div class="card"><h3>Qualified Teachers</h3><p>All our tutors are highly qualified and experienced professionals.</p></div>
-            <div class="card"><h3>Flexible Timing</h3><p>Choose your preferred time slots that fit your schedule.</p></div>
-            <div class="card"><h3>Personalized Learning</h3><p>Customized teaching methods based on individual student needs.</p></div>
-            <div class="card"><h3>Proven Results</h3><p>A track record of helping students achieve excellent grades.</p></div>
+            <div class="card"><h3><i class="fas fa-user-check"></i> Qualified Teachers</h3><p>All our tutors are highly qualified and experienced professionals.</p></div>
+            <div class="card"><h3><i class="fas fa-clock"></i> Flexible Timing</h3><p>Choose your preferred time slots that fit your family's schedule.</p></div>
+            <div class="card"><h3><i class="fas fa-lightbulb"></i> Personalized Learning</h3><p>Customized teaching methods based on individual student needs.</p></div>
+            <div class="card"><h3><i class="fas fa-chart-line"></i> Proven Results</h3><p>A track record of helping students achieve excellent grades.</p></div>
         </div>
     </section>
 
@@ -175,7 +193,7 @@
         <div class="testimonials">
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p>"Roots Tutor Academy helped me improve my grades significantly. The tutors are amazing!"</p>
+                <p>"Roots Tutor Academy helped me improve my grades significantly. The physics tutor was amazing!"</p>
                 <h4>- Sarah Ahmed</h4>
             </div>
             <div class="testimonial">
@@ -185,10 +203,17 @@
             </div>
             <div class="testimonial">
                 <div class="stars">★★★★★</div>
-                <p>"Professional and dedicated tutors. Highly recommend for O/A Level students."</p>
+                <p>"Professional and dedicated tutors. Highly recommend for any O/A Level student."</p>
                 <h4>- Fatima Khan</h4>
             </div>
         </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Take the first step towards academic success. Book a free demo session with one of our expert tutors today!</p>
+        <button class="btn btn-primary modal-trigger">Book a Free Demo Today</button>
     </section>
 
     <!-- Footer -->
@@ -210,7 +235,7 @@
                 <a href="student-hub.html">Student Hub</a>
             </div>
         </div>
-        <p>&copy; 2024 Roots Tutor Academy. All rights reserved.</p>
+        <p>&copy; 2025 Roots Tutor Academy. All rights reserved.</p>
     </footer>
 
     <!-- WhatsApp Button -->
@@ -258,20 +283,17 @@
             <label for="notes">Additional Notes (optional)</label>
             <textarea id="notes" name="notes" rows="3"></textarea>
 
-            <button class="btn-primary" type="submit">Submit Request</button>
+            <button class="btn btn-primary" type="submit">Submit Request</button>
         </form>
-
         <div id="message"></div>
     </div>
 </div>
 
 <!-- Firebase and Page Logic -->
 <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyChaU7FMhPkg-VI0lfctenjLKbaHUmBnZU",
       authDomain: "onnnnnnnn-86197.firebaseapp.com",
@@ -281,7 +303,6 @@
       appId: "1:708226700407:web:51b22d980cc650b1ba6272"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
@@ -319,10 +340,11 @@
         }));
         closeModalButton.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
+            if (e.target === modal) closeModal();
         });
+
+        // *** Auto-open modal after a delay ***
+        setTimeout(openModal, 2000); // Opens modal 2 seconds after page load
 
         // Form Submission Logic
         tutorForm.addEventListener('submit', async (e) => {
