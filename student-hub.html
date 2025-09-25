@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,6 +90,8 @@
         .article-card .card-category { font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 50px; background-color: var(--primary-green); color: white; align-self: flex-start; margin-bottom: 1rem; }
         .article-card h3 { font-size: 1.3rem; line-height: 1.4; margin-bottom: 0.5rem; }
         .article-card .card-excerpt { color: var(--subtle-text); font-size: 0.95rem; flex-grow: 1; margin-bottom: 1rem; }
+        .article-card .ql-editor, .article-card .ql-blank { padding: 0; }
+        .article-card .ql-editor p { margin-bottom: 0.5rem; }
         .article-card .card-meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--subtle-text); padding-top: 1rem; border-top: 1px solid #e9ecef; }
         .no-results { text-align: center; padding: 3rem; font-size: 1.2rem; color: var(--subtle-text); display: none; }
         .modal { position: fixed; inset: 0; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.6); z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; padding: 20px; }
@@ -99,7 +101,6 @@
         .modal-content form { display: flex; flex-direction: column; gap: 1rem; }
         .modal-content label { font-weight: 600; }
         .modal-content input, .modal-content select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; }
-        
         .skeleton { background: #e0e0e0; border-radius: 8px; animation: pulse 1.5s infinite ease-in-out; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         .skeleton-card { background-color: var(--card-bg); padding: 1rem; box-shadow: var(--shadow); border-radius: 8px; }
@@ -156,7 +157,6 @@
                     <a href="#" class="btn btn-primary modal-trigger">Book a Free Demo</a>
                 </div>
                 <section class="resource-grid" id="resource-grid">
-                    <!-- SKELETON LOADER for LIVE DATA -->
                     <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text skeleton-text-short"></div></div>
                     <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text skeleton-text-short"></div></div>
                     <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text skeleton-text-short"></div></div>
@@ -172,7 +172,9 @@
                     </div>
                 </section>
                 <section class="article-grid" id="article-grid">
-                    <!-- STATIC, HARDCODED ARTICLES WILL BE RENDERED HERE -->
+                    <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text skeleton-text-short"></div></div>
+                    <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text skeleton-text-short"></div></div>
+                    <div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text skeleton-text-short"></div></div>
                 </section>
                 <div class="no-results" id="no-results-articles"><h3>No articles found. Try a different category.</h3></div>
             </div>
@@ -186,34 +188,11 @@
 
         <footer>
             <div class="footer-grid">
-                <div>
-                    <h4>About Roots Tutor Academy</h4>
-                    <p>We are dedicated to helping students in Karachi and across Pakistan reach their full potential through quality education and personalized tutoring.</p>
-                    <div class="social">
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#" class="modal-trigger">Find a Tutor</a></li>
-                        <li><a href="#">Register as a Tutor</a></li>
-                        <li><a href="#">Student Hub</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contact Us</h4>
-                    <p>Karachi, Pakistan<br>
-                    <a href="tel:+923352228907">+92 335 2228907</a><br>
-                    <a href="mailto:info@rootstutoracademy.com">info@rootstutoracademy.com</a></p>
-                </div>
+                <div><h4>About Roots Tutor Academy</h4><p>We are dedicated to helping students in Karachi and across Pakistan reach their full potential through quality education and personalized tutoring.</p><div class="social"><a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+                <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="#" class="modal-trigger">Find a Tutor</a></li><li><a href="#">Register as a Tutor</a></li><li><a href="#">Student Hub</a></li></ul></div>
+                <div><h4>Contact Us</h4><p>Karachi, Pakistan<br><a href="tel:+923352228907">+92 335 2228907</a><br><a href="mailto:info@rootstutoracademy.com">info@rootstutoracademy.com</a></p></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Roots Tutor Academy. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Roots Tutor Academy. All Rights Reserved.</p></div>
         </footer>
     </div>
 
@@ -234,6 +213,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        
         const firebaseConfig = {
             apiKey: "AIzaSyChaU7FMhPkg-VI0lfctenjLKbaHUmBnZU",
             authDomain: "onnnnnnnn-86197.firebaseapp.com",
@@ -244,17 +224,8 @@
         };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-
-        // STATIC, HARDCODED DATA FOR NEWS & UPDATES (SEO-FRIENDLY)
-        const allArticlesData = [
-            { title: "BISE Karachi Intermediate Year 2 Results Announced - Check Now!", category: "Results", excerpt: "The official results for the HSSC Part 2 exams have been released by the Board of Intermediate Education, Karachi. Check your scores online.", date: "Sep 25, 2025", imageUrl: "https://placehold.co/600x400/2E7D32/FFFFFF?text=Results+Out", link: "article-template.html" },
-            { title: "University of Karachi & NED Admission Deadlines Approaching Fast", category: "Admissions", excerpt: "The deadline for submitting applications for the 2025-26 academic year at two of Karachi's top universities is next week. Don't miss out!", date: "Sep 22, 2025", imageUrl: "https://placehold.co/600x400/0D1B2A/FFFFFF?text=Admissions", link: "#" },
-            { title: "How to Prepare for University Entry Tests in 4 Weeks", category: "Blogs", excerpt: "Feeling the pressure? Here's a proven study plan to help you effectively prepare for your university admission tests in a short amount of time.", date: "Sep 20, 2025", imageUrl: "https://placehold.co/600x400/2E7D32/FFFFFF?text=Study+Tips", link: "#" },
-            { title: "O-Level Retake Strategies: A Guide for Students in Karachi", category: "Blogs", excerpt: "Didn't get the grades you wanted? It's not the end of the world. Here's a guide on how to plan for retakes and improve your scores.", date: "Sep 18, 2025", imageUrl: "https://placehold.co/600x400/0D1B2A/FFFFFF?text=Retakes", link: "#" }
-        ];
         
         document.addEventListener('DOMContentLoaded', () => {
-            // Element selectors...
             const pageContent = document.getElementById('page-content');
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -280,22 +251,44 @@
             const resourceCtaBanner = document.getElementById('resource-cta-banner');
             const ctaBannerText = document.getElementById('cta-banner-text');
 
-            let allResources = [];
-            let allArticles = allArticlesData; // Use static data
+            let allResources = [], allArticles = [];
 
-            // --- Modal and Menu Logic ---
             mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
             const openModal = () => { tutorModal.classList.add('active'); pageContent.classList.add('blur'); document.body.classList.add('modal-open'); };
             const closeModal = () => { tutorModal.classList.remove('active'); pageContent.classList.remove('blur'); document.body.classList.remove('modal-open'); };
             modalTriggers.forEach(trigger => trigger.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
             closeModalBtn.addEventListener('click', closeModal);
             tutorModal.addEventListener('click', (e) => { if (e.target === tutorModal) closeModal(); });
-            tutorForm.addEventListener('submit', async (e) => { e.preventDefault(); /* ... Firestore logic ... */ });
 
-            // --- LIVE DATA: Learning Resources ---
+            tutorForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                formMessage.textContent = "Submitting...";
+                formMessage.style.color = 'var(--subtle-text)';
+                try {
+                    await addDoc(collection(db, "tutorRequests"), {
+                        parentName: tutorForm.parentName.value,
+                        phone: tutorForm.phone.value,
+                        studentClass: tutorForm.studentClass.value,
+                        submittedAt: serverTimestamp()
+                    });
+                    formMessage.textContent = "Success! We'll contact you shortly.";
+                    formMessage.style.color = 'var(--primary-green)';
+                    tutorForm.reset();
+                    setTimeout(closeModal, 2000);
+                } catch (error) {
+                    console.error("Form submission error:", error);
+                    formMessage.textContent = "Error submitting request. Please try again.";
+                    formMessage.style.color = 'red';
+                }
+            });
+
             onSnapshot(query(collection(db, "resources"), orderBy("createdAt", "desc")), (snapshot) => {
                 allResources = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 applyResourceFilters();
+            });
+            onSnapshot(query(collection(db, "articles"), orderBy("createdAt", "desc")), (snapshot) => {
+                allArticles = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                applyArticleFilters();
             });
 
             function applyResourceFilters() {
@@ -303,65 +296,46 @@
                 const cls = classFilter.value;
                 const subj = subjectFilter.value;
                 const filtered = allResources.filter(r => r.title.toLowerCase().includes(term) && (cls === 'all' || r.class === cls) && (subj === 'all' || r.subject === subj));
-                if (cls !== 'all' && subj !== 'all') {
-                    ctaBannerText.textContent = `Need personalized help with ${cls} ${subj}?`;
-                    resourceCtaBanner.style.display = 'flex';
-                } else {
-                    resourceCtaBanner.style.display = 'none';
-                }
+                if (cls !== 'all' && subj !== 'all') { ctaBannerText.textContent = `Need personalized help with ${cls} ${subj}?`; resourceCtaBanner.style.display = 'flex'; } else { resourceCtaBanner.style.display = 'none'; }
                 renderResources(filtered);
             }
-
             function renderResources(filtered) {
                 resourceGrid.innerHTML = '';
                 noResultsResources.style.display = filtered.length === 0 ? 'block' : 'none';
                 filtered.forEach(res => {
                     const icon = res.type === 'video' ? 'fa-play' : (res.type === 'pdf' ? 'fa-file-pdf' : 'fa-file-alt');
-                    const card = document.createElement('a');
-                    card.className = 'resource-card card'; card.href = res.link; card.target = '_blank';
-                    card.innerHTML = `<div class="card-thumbnail" style="background-image: url('${res.thumbnailUrl}')"><div class="type-icon"><i class="fas ${icon}"></i></div></div><div class="card-content"><h3>${res.title}</h3><span class="tag">${res.class}</span></div>`;
+                    const card = document.createElement('a'); card.className = 'resource-card card'; card.href = res.link; card.target = '_blank';
+                    card.innerHTML = `<div class="card-thumbnail" style="background-image: url('${res.thumbnailUrl || 'https://placehold.co/600x400/2E7D32/FFFFFF?text=Resource'}')"><div class="type-icon"><i class="fas ${icon}"></i></div></div><div class="card-content"><h3>${res.title}</h3><span class="tag">${res.class}</span></div>`;
                     resourceGrid.appendChild(card);
                 });
             }
-
-            // --- STATIC DATA: News & Updates ---
             function applyArticleFilters() {
                 const term = newsSearchInput.value.toLowerCase();
                 const cat = categoryFilterContainer.querySelector('button.active').dataset.category;
                 const filtered = allArticles.filter(a => a.title.toLowerCase().includes(term) && (cat === 'all' || a.category === cat));
                 renderArticles(filtered);
             }
-
             function renderArticles(filtered) {
                 articleGrid.innerHTML = '';
-                noResultsArticles.style.display = filtered.length === 'none';
+                noResultsArticles.style.display = filtered.length === 0 ? 'block' : 'none';
                 filtered.forEach(art => {
+                    const date = art.createdAt ? new Date(art.createdAt.seconds * 1000).toLocaleDateString() : 'N/A';
                     const card = document.createElement('a');
-                    card.className = 'article-card card'; card.href = art.link || "#";
-                    card.innerHTML = `<div class="card-image" style="background-image: url('${art.imageUrl}')"></div><div class="card-content"><span class="card-category">${art.category}</span><h3>${art.title}</h3><div class="card-excerpt">${art.excerpt}</div><div class="card-meta"><span>By RTA News</span><span>${art.date}</span></div></div>`;
+                    card.className = 'article-card card';
+                    card.href = art.link || "#"; // Use link from firestore if it exists
+                    card.target = art.link ? '_blank' : '_self';
+                    card.innerHTML = `<div class="card-image" style="background-image: url('${art.imageUrl}')"></div><div class="card-content"><span class="card-category">${art.category}</span><h3>${art.title}</h3><div class="card-excerpt ql-editor">${art.content || art.excerpt}</div><div class="card-meta"><span>By RTA News</span><span>${date}</span></div></div>`;
                     articleGrid.appendChild(card);
                 });
             }
-            
-            // --- Event Listeners ---
             [resourcesSearchInput, classFilter, subjectFilter].forEach(el => el.addEventListener('input', applyResourceFilters));
             newsSearchInput.addEventListener('input', applyArticleFilters);
-            categoryTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    categoryTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    applyArticleFilters();
-                });
-            });
-
-            // Tab switching logic
+            categoryTabs.forEach(tab => { tab.addEventListener('click', () => { categoryTabs.forEach(t => t.classList.remove('active')); tab.classList.add('active'); applyArticleFilters(); }); });
             tabResources.addEventListener('click', () => { tabNews.classList.remove('active'); panelNews.classList.remove('active'); tabResources.classList.add('active'); panelResources.classList.add('active'); });
             tabNews.addEventListener('click', () => { tabResources.classList.remove('active'); panelResources.classList.remove('active'); tabNews.classList.add('active'); panelNews.classList.add('active'); });
-        
-            // --- Initial Render for Static Content ---
-            applyArticleFilters();
         });
     </script>
 </body>
 </html>
+
 
